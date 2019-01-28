@@ -26,15 +26,20 @@ filterButton.on("click", function(){
     var filteredData = sightings.filter(sight => sight.datetime === inputValue);
     console.log(filteredData);
 
+    //clear any exisiting rows
+    d3.selectAll("#rowData").remove();
 
-    // Get a reference to the table body
-    var tbody = d3.select("tbody");
 
     //populate the table
     filteredData.forEach((sighting) => {
-        var row = tbody.append("tr");
+
+        
+        // Get a reference to the table body
+        var tbody = d3.select("tbody");
+
+        var row = tbody.append("tr").attr("id", "rowData");
         Object.entries(sighting).forEach(([key, value]) => {
-        var cell = tbody.append("td");
+        var cell = tbody.append("td").attr("id", "rowData");
         cell.text(value);
         });
     });
