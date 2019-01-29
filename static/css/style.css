@@ -138,6 +138,12 @@
     color: #8e979f;
   }
   
+  .dateheader {
+    color:greenyellow;
+    size:18px;
+    style:bold;
+  }
+
   /* media queries which will only be activated at specific screen sizes */
   @media (max-width: 800px) {
     #table-area td {
